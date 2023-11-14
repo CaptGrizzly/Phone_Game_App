@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "263236169738",
+    "project_id": "csc322-game-app-af459",
+    "storage_bucket": "csc322-game-app-af459.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:263236169738:android:94db3034d30d8b3039eff3",
+        "android_client_info": {
+          "package_name": "com.example.csc322_game_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXy6Jyw9-CNVHeSfATSJkABBYl3M5cwMY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
