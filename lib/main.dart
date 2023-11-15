@@ -9,9 +9,11 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
 );                                          
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp (
@@ -23,6 +25,8 @@ class MyApp extends StatelessWidget {
 
 class HomeScreen extends StatelessWidget {
   final Stream<QuerySnapshot> test_collection = FirebaseFirestore.instance.collection('test_collection').snapshots();
+
+  HomeScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,7 +67,7 @@ class HomeScreen extends StatelessWidget {
               'Write Data to Cloud Firestore',
               style: TextStyle(fontSize:20, fontWeight: FontWeight.w600),
             ),
-            MyCustomForm()
+            const MyCustomForm()
           ],
         ),
       ),
@@ -72,6 +76,8 @@ class HomeScreen extends StatelessWidget {
 }
 
 class MyCustomForm extends StatefulWidget{
+  const MyCustomForm({super.key});
+
   @override
   MyCustomFormState createState() {
     return MyCustomFormState();
@@ -81,8 +87,12 @@ class MyCustomForm extends StatefulWidget{
 class MyCustomFormState extends State<MyCustomForm> {
   final _formKey = GlobalKey<FormState>();
 
+  var name = '';
+  var age = 0;
+
   @override
   Widget build(BuildContext context){
+    CollectionReference test_collection = FirebaseFirestore.instance.collection('test_collection');
     return Form(
       key: _formKey,
       child: Column(
@@ -94,7 +104,9 @@ class MyCustomFormState extends State<MyCustomForm> {
               hintText: 'What\'s Your Name?',
               labelText: 'Name',
             ),
-            onChanged: (value) {},
+            onChanged: (value) {
+              name = value;
+            },
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Please enter some text';
@@ -108,7 +120,9 @@ class MyCustomFormState extends State<MyCustomForm> {
               hintText: 'What\'s Your age?',
               labelText: 'Age',
             ),
-            onChanged: (value) {},
+            onChanged: (value) {
+              age = int.parse(value);
+            },
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Please enter some text';
@@ -129,6 +143,11 @@ class MyCustomFormState extends State<MyCustomForm> {
                           content: Text('Sending Data to Cloud Firestore'),
                         ),
                       );
+                      test_collection
+                        .add({'name': name, 'age': age})
+                        .then((value) => print('User Added'))
+                        .catchError(
+                          (error) => print('Failed to add user: $error'));
                     }
                   },
                   child: const Text('Submit'),
