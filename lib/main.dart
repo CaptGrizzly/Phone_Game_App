@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:flutter/material.dart';
+import 'home.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -71,7 +72,7 @@ class MyCustomFormState extends State<MyCustomForm> {
   Widget build(BuildContext context){
     return Form(
       key: _formKey,
-      child:Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           TextFormField(
@@ -103,20 +104,37 @@ class MyCustomFormState extends State<MyCustomForm> {
             },
           ), 
           const SizedBox(height: 10),
-          Center(
-            child: ElevatedButton(
-              onPressed: () {
-                if (_formKey.currentState!.validate()) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('Sending Data to Cloud Firestore'),
-                    ),
-                  );
-                }
-              },
-              child: const Text('Submit'),
-            ),
-          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Center(
+                child: ElevatedButton(
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text('Sending Data to Cloud Firestore'),
+                        ),
+                      );
+                    }
+                  },
+                  child: const Text('Submit'),
+                ),
+              ),
+              const SizedBox(width: 10),
+              Center(
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const GameHomeScreen()),
+                    );
+                  },
+                  child: const Text('Game'),
+                ),
+              ),
+            ],
+          )
         ],
       ),
     );
