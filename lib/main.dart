@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
 }
 
 
-class HomeScreen extends StatelessWidget{
+class HomeScreen extends StatelessWidget {
+  final Stream<QuerySnapshot> test_collection = FirebaseFirestore.instance.collection('test_collection').snapshots();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,12 +40,23 @@ class HomeScreen extends StatelessWidget{
             Container(
               height: 250,
               padding: const EdgeInsets.symmetric(vertical: 20),
-              child: ListView.builder(
-                itemCount: 2,
-                itemBuilder: (context, index) {
-                  return const Text('My name is Bryson and I am 22 years old.');
-                },
-              ),
+              child: StreamBuilder<QuerySnapshot>(stream: test_collection, builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+                if (snapshot.hasError) {
+                  return const Text('Something went wrong');
+                }
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const Text('Loading');
+                }
+                return ListView(
+                  children: snapshot.data!.docs.map((DocumentSnapshot document) {
+                    Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
+                    return ListTile(
+                      title: Text(data['name']),
+                      subtitle: Text(data['age'].toString()),
+                    );
+                  }).toList(),
+                );
+              },)
             ),
             const Text(
               'Write Data to Cloud Firestore',
