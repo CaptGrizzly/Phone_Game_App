@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'hit_and_blow.dart';
+import 'mad_libs_home.dart';
 import 'main.dart';
+import 'maze.dart';
+import 'scores.dart';
+import 'platformer.dart';
 
 class GameHomeScreen extends StatelessWidget {
   const GameHomeScreen({super.key});
@@ -44,7 +49,12 @@ class GameHomeScreen extends StatelessWidget {
                           color: Colors.black,
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const MadLibsHomeScreen())
+                        );
+                      },
                       child: const Text(
                         'Mad Libs',
                         style: TextStyle(
@@ -67,7 +77,12 @@ class GameHomeScreen extends StatelessWidget {
                           color: Colors.black,
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const MazeScreen())
+                        );
+                      },
                       child: const Text(
                         'Maze',
                         style: TextStyle(
@@ -95,7 +110,12 @@ class GameHomeScreen extends StatelessWidget {
                             color: Colors.black,
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const HitAndBlowScreen())
+                          );
+                        },
                         child: const Text(
                           'Hit & Blow',
                           style: TextStyle(
@@ -118,7 +138,12 @@ class GameHomeScreen extends StatelessWidget {
                           color: Colors.black,
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const PlatformerScreen())
+                        );
+                      },
                       child: const Text(
                         '2D Platformer',
                         style: TextStyle(
@@ -140,7 +165,12 @@ class GameHomeScreen extends StatelessWidget {
                     color: Colors.black,
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const ScoresScreen())
+                  );
+                },
                 child: const Text(
                   'High Scores',
                   style: TextStyle(
