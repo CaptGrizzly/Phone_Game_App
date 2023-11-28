@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'home.dart';
+import '../home.dart';
 
 class HitAndBlowScreen extends StatelessWidget {
   const HitAndBlowScreen({super.key});

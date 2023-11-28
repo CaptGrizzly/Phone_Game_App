@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'home.dart';
+import '../home.dart';
 
-class MadLibsHomeScreen extends StatelessWidget {
-  const MadLibsHomeScreen({super.key});
+class PlatformerScreen extends StatelessWidget {
+  const PlatformerScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.red,
+      backgroundColor: Colors.lightBlue,
       body: Center(
         child: ElevatedButton(
           onPressed: () {
             Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const GameHomeScreen())
+                context,
+                MaterialPageRoute(builder: (context) => const GameHomeScreen())
             );
           },
           child: const Text('Home'),

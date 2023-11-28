@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'home.dart';
+import '../home.dart';
 
-class MazeScreen extends StatelessWidget {
-  const MazeScreen({super.key});
+class MadLibsHomeScreen extends StatelessWidget {
+  const MadLibsHomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.yellow,
+      backgroundColor: Colors.red,
       body: Center(
         child: ElevatedButton(
           onPressed: () {

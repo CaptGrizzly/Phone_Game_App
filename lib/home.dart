@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'hit_and_blow.dart';
-import 'mad_libs_home.dart';
+import 'games/hit_and_blow.dart';
+import 'games/mad_libs_home.dart';
 import 'main.dart';
-import 'maze.dart';
+import 'games/maze.dart';
 import 'scores.dart';
-import 'platformer.dart';
+import 'games/platformer.dart';
 
 class GameHomeScreen extends StatelessWidget {
   const GameHomeScreen({super.key});
