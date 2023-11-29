@@ -1,3 +1,4 @@
+import 'package:csc322_game_app/games/mad%20libs/mad_libs_input.dart';
 import 'package:flutter/material.dart';
 import '../../home.dart';
 
@@ -35,7 +36,7 @@ class MadLibsHomeScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const GameHomeScreen())
+                      MaterialPageRoute(builder: (context) => const MadLibsInputScreen())
                   );
                 },
                 child: const Text(
@@ -62,7 +63,7 @@ class MadLibsHomeScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const GameHomeScreen())
+                      MaterialPageRoute(builder: (context) => const MadLibsInputScreen())
                   );
                 },
                 child: const Text(
@@ -89,7 +90,7 @@ class MadLibsHomeScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const GameHomeScreen())
+                      MaterialPageRoute(builder: (context) => const MadLibsInputScreen())
                   );
                 },
                 child: const Text(
