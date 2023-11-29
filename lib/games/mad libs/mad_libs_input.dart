@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../home.dart';
+import 'mad_libs_home.dart';
+import 'mad_libs_result.dart';
 
 class MadLibsInputScreen extends StatefulWidget {
   const MadLibsInputScreen({super.key});
@@ -48,6 +49,33 @@ class _MadLibsInputScreenState extends State<MadLibsInputScreen> {
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                   color: Color.fromARGB(255, 100, 3, 3),
+                ),
+              ),
+              const SizedBox(height: 10),
+              SizedBox(
+                width: 180,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.green,
+                    side: const BorderSide(
+                      width: 1,
+                      color: Colors.black,
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const MadLibsResultsScreen())
+                    );
+                  },
+                  child: const Text(
+                    'See Result',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
                 ),
               ),
             ],

@@ -1,0 +1,72 @@
+import 'package:csc322_game_app/games/mad%20libs/puzzles.dart';
+import 'package:flutter/material.dart';
+import '../../home.dart';
+import 'mad_libs_home.dart';
+import 'puzzles.dart';
+
+class MadLibsResultsScreen extends StatelessWidget {
+  const MadLibsResultsScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Colors.red,
+        body: Center(
+          child: Column(
+            children: [
+              const SizedBox(height: 60),
+              const Text(
+                'Final Result',
+                style: TextStyle(
+                  fontSize: 40,
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 100, 3, 3),
+                ),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 20),
+              SizedBox(
+                width: 300,
+                child: Text(
+                  campStory,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                    color: Colors.black,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              const SizedBox(height: 20),
+              SizedBox(
+                width: 120,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    side: const BorderSide(
+                      width: 1,
+                      color: Colors.black,
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const MadLibsHomeScreen())
+                    );
+                  },
+                  child: const Text(
+                    'New Puzzle',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        )
+    );
+  }
+}
