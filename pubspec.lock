@@ -168,6 +168,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.5.0"
+  maze_builder:
+    dependency: "direct main"
+    description:
+      name: maze_builder
+      sha256: "5f09e8ea64966507e2581a046b4ca8398609e494e591b8e27318089c690ad775"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.1"
   meta:
     dependency: transitive
     description:
