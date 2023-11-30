@@ -1,11 +1,11 @@
-import 'package:csc322_game_app/games/mad%20libs/puzzles.dart';
 import 'package:flutter/material.dart';
 import '../../home.dart';
 import 'mad_libs_home.dart';
-import 'puzzles.dart';
 
 class MadLibsResultsScreen extends StatelessWidget {
-  const MadLibsResultsScreen({super.key});
+  const MadLibsResultsScreen({super.key, required this.story});
+
+  final String story;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class MadLibsResultsScreen extends StatelessWidget {
               SizedBox(
                 width: 300,
                 child: Text(
-                  campStory,
+                  story,
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
@@ -38,31 +38,63 @@ class MadLibsResultsScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              SizedBox(
-                width: 120,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                    side: const BorderSide(
-                      width: 1,
-                      color: Colors.black,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: 120,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.yellow,
+                        side: const BorderSide(
+                          width: 1,
+                          color: Colors.black,
+                        ),
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const MadLibsHomeScreen())
+                        );
+                      },
+                      child: const Text(
+                        'New Puzzle',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                   ),
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const MadLibsHomeScreen())
-                    );
-                  },
-                  child: const Text(
-                    'New Puzzle',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
+                  const SizedBox(width: 20),
+                  SizedBox(
+                    width: 120,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blue,
+                        side: const BorderSide(
+                          width: 1,
+                          color: Colors.black,
+                        ),
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const GameHomeScreen())
+                        );
+                      },
+                      child: const Text(
+                        'Home',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
                     ),
-                    textAlign: TextAlign.center,
                   ),
-                ),
+                ],
               ),
             ],
           ),

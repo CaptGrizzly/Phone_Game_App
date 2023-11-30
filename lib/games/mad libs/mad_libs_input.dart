@@ -3,7 +3,9 @@ import 'mad_libs_home.dart';
 import 'mad_libs_result.dart';
 
 class MadLibsInputScreen extends StatefulWidget {
-  const MadLibsInputScreen({super.key});
+  const MadLibsInputScreen({super.key, required this.story});
+
+  final String story;
 
   @override
   State<MadLibsInputScreen> createState() => _MadLibsInputScreenState();
@@ -65,7 +67,7 @@ class _MadLibsInputScreenState extends State<MadLibsInputScreen> {
                   onPressed: () {
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const MadLibsResultsScreen())
+                        MaterialPageRoute(builder: (context) => MadLibsResultsScreen(story: widget.story))
                     );
                   },
                   child: const Text(
