@@ -1,7 +1,7 @@
 List<String> campBlanks = [
   "Family Member", "Adjective", "Adjective", "Adjective",
-  "Proper Name", "Adjective", "Animal", "Verb (-ing)",
-  "Place", "Adjective", "Plural Body Part", "Place",
+  "Proper Name", "Adjective", "Verb (-ing)", "Place",
+  "Adjective", "Animal", "Plural Body Part", "Place",
   "Verb", "Verb", "Verb", "Proper Name"
 ];
 

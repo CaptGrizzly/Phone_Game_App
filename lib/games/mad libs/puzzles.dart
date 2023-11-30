@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-String campStory = "Dear family member, \n"
-"I am having a(n) adjective time at camp. My counselor is adjective and the food is adjective. "
-    "I met proper name and we became adjective friends. When we went verb (-ing) at the place yesterday, we saw a(n) adjective animal! "
-    "We could not believe our plural body part! Every night, we meet at the place and verb songs. I do verb home, though, "
-    "so please verb back soon! \n"
+String campStory = "Dear word, \n"
+"I am having a(n) word time at camp. My counselor is word and the food is word. "
+    "I met word and we became word friends. When we went word at the place yesterday, we saw a(n) word word! "
+    "We could not believe our word! Every night, we meet at the word and word songs. I do word home, though, "
+    "so please word back soon! \n"
 "Sincerely, \n"
-"proper name";
+"word";
 
 String laundryStory = "In order to do your laundry, you first have to verb your clothes. You then need to verb your noun machine. "
     "Be careful with any items that may be adjective. Separate the plural noun from your plural noun "

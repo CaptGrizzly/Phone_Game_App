@@ -6,11 +6,17 @@ class MadLibsResultsScreen extends StatelessWidget {
   const MadLibsResultsScreen({
     super.key,
     required this.story,
-    required this.blanks,
+    required this.input,
   });
 
   final String story;
-  final List<String> blanks;
+  final List<String> input;
+
+  void fillStory(String story, List<String> input) {
+    for (String term in input) {
+      story.replaceAll("word", term);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
