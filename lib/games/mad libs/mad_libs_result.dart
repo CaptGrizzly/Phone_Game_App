@@ -3,9 +3,14 @@ import '../../home.dart';
 import 'mad_libs_home.dart';
 
 class MadLibsResultsScreen extends StatelessWidget {
-  const MadLibsResultsScreen({super.key, required this.story});
+  const MadLibsResultsScreen({
+    super.key,
+    required this.story,
+    required this.blanks,
+  });
 
   final String story;
+  final List<String> blanks;
 
   @override
   Widget build(BuildContext context) {

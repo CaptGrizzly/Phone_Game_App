@@ -1,3 +1,5 @@
+import 'package:csc322_game_app/games/mad%20libs/blanks.dart';
+
 import '/games/mad%20libs/mad_libs_input.dart';
 import '/games/mad%20libs/puzzles.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +38,10 @@ class MadLibsHomeScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => MadLibsInputScreen(story: campStory))
+                      MaterialPageRoute(builder: (context) => MadLibsInputScreen(
+                        story: campStory,
+                        blanks: campBlanks,
+                      )),
                   );
                 },
                 child: const Text(
@@ -63,7 +68,10 @@ class MadLibsHomeScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => MadLibsInputScreen(story: laundryStory))
+                      MaterialPageRoute(builder: (context) => MadLibsInputScreen(
+                        story: laundryStory,
+                        blanks: laundryBlanks,
+                      )),
                   );
                 },
                 child: const Text(
@@ -90,7 +98,10 @@ class MadLibsHomeScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => MadLibsInputScreen(story: cookingStory))
+                      MaterialPageRoute(builder: (context) => MadLibsInputScreen(
+                        story: cookingStory,
+                        blanks: cookingBlanks,
+                      )),
                   );
                 },
                 child: const Text(

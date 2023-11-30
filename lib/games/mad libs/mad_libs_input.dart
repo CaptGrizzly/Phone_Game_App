@@ -3,9 +3,14 @@ import 'mad_libs_home.dart';
 import 'mad_libs_result.dart';
 
 class MadLibsInputScreen extends StatefulWidget {
-  const MadLibsInputScreen({super.key, required this.story});
+  const MadLibsInputScreen({
+    super.key,
+    required this.story,
+    required this.blanks,
+  });
 
   final String story;
+  final List<String> blanks;
 
   @override
   State<MadLibsInputScreen> createState() => _MadLibsInputScreenState();
@@ -33,26 +38,29 @@ class _MadLibsInputScreenState extends State<MadLibsInputScreen> {
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 30),
-              SizedBox(
-                width: 300,
-                child: TextField(
-                  controller: _textController,
-                  decoration: const InputDecoration(
-                    filled: true,
-                    fillColor: Colors.white,
-                    border: OutlineInputBorder(),
+              for (String blank in widget.blanks) ... [
+                SizedBox(
+                  width: 300,
+                  child: TextField(
+                    controller: _textController,
+                    decoration: const InputDecoration(
+                      filled: true,
+                      fillColor: Colors.white,
+                      border: OutlineInputBorder(),
+                    ),
                   ),
                 ),
-              ),
-              const SizedBox(height: 10),
-              const Text(
-                'Noun',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 100, 3, 3),
+                const SizedBox(height: 5),
+                Text(
+                  blank,
+                  style: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Color.fromARGB(255, 100, 3, 3),
+                  ),
                 ),
-              ),
+                const SizedBox(height: 10),
+              ],
               const SizedBox(height: 10),
               SizedBox(
                 width: 180,
@@ -67,7 +75,10 @@ class _MadLibsInputScreenState extends State<MadLibsInputScreen> {
                   onPressed: () {
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => MadLibsResultsScreen(story: widget.story))
+                        MaterialPageRoute(builder: (context) => MadLibsResultsScreen(
+                          story: widget.story,
+                          blanks: widget.blanks,
+                        ))
                     );
                   },
                   child: const Text(
@@ -80,6 +91,7 @@ class _MadLibsInputScreenState extends State<MadLibsInputScreen> {
                   ),
                 ),
               ),
+              const SizedBox(height: 10),
             ],
           ),
         ),
