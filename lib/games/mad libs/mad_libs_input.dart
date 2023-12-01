@@ -19,10 +19,6 @@ class MadLibsInputScreen extends StatefulWidget {
 class _MadLibsInputScreenState extends State<MadLibsInputScreen> {
   final List<String> _userInput = [];
 
-  void _addInput(String input) {
-    _userInput.add(input);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,6 +48,9 @@ class _MadLibsInputScreenState extends State<MadLibsInputScreen> {
                         fillColor: Colors.white,
                         border: OutlineInputBorder(),
                       ),
+                      onChanged: (String text) {
+                        _userInput.add(text);
+                      },
                     ),
                   ),
                   const SizedBox(height: 5),
