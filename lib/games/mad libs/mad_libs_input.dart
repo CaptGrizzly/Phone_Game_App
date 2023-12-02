@@ -18,24 +18,6 @@ class MadLibsInputScreen extends StatefulWidget {
 
 class _MadLibsInputScreenState extends State<MadLibsInputScreen> {
   final List<String> _userInput = [];
-  final _formKey = GlobalKey<FormState>();
-  var _isSending = false;
-
-  void _saveList() async {
-    if (_formKey.currentState!.validate()) {
-      _formKey.currentState!.save();
-      setState(() {
-        _isSending = true;
-      });
-
-      Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => MadLibsResultsScreen(
-            story: widget.story,
-            input: _userInput,
-          ))
-      );
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +25,6 @@ class _MadLibsInputScreenState extends State<MadLibsInputScreen> {
       backgroundColor: Colors.red,
       body: SingleChildScrollView(
         child: Form(
-          key: _formKey,
           child: Center(
             child: Column(
               children: [
@@ -67,15 +48,8 @@ class _MadLibsInputScreenState extends State<MadLibsInputScreen> {
                         fillColor: Colors.white,
                         border: OutlineInputBorder(),
                       ),
-                      validator: (value) {
-                        if (value == null ||
-                            value.isEmpty) {
-                          return 'Please enter a value.';
-                        }
-                        return null;
-                      },
-                      onSaved: (value) {
-                        _userInput.add(value!);
+                      onChanged: (String text) {
+                        _userInput.add(text);
                       },
                     ),
                   ),
@@ -102,7 +76,13 @@ class _MadLibsInputScreenState extends State<MadLibsInputScreen> {
                       ),
                     ),
                     onPressed: () {
-                      _isSending ? null : _saveList;
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => MadLibsResultsScreen(
+                            story: widget.story,
+                            input: _userInput,
+                          ))
+                      );
                     },
                     child: const Text(
                       'See Result',
