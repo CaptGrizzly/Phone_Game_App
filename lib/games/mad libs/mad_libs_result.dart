@@ -12,6 +12,13 @@ class MadLibsResultsScreen extends StatelessWidget {
   final String story;
   final List<String> input;
 
+  // String fillStory(String story, List<String> input) {
+  //   for (String term in input) {
+  //     story.replaceFirst("word", term);
+  //   }
+  //   return story;
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +40,7 @@ class MadLibsResultsScreen extends StatelessWidget {
                 SizedBox(
                   width: 300,
                   child: Text(
-                    story.replaceAll("word", input[0]),
+                    story,
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 18,

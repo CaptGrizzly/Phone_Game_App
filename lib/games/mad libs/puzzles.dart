@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 String campStory = "Dear word, \n"
 "I am having a(n) word time at camp. My counselor is word and the food is word. "
-    "I met word and we became word friends. When we went word at the place yesterday, we saw a(n) word word! "
+    "I met word and we became word friends. When we went word at the word yesterday, we saw a(n) word word! "
     "We could not believe our word! Every night, we meet at the word and word songs. I do word home, though, "
     "so please word back soon! \n"
 "Sincerely, \n"

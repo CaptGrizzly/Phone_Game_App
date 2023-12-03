@@ -104,7 +104,7 @@ class GameHomeScreen extends StatelessWidget {
                     height: 80,
                     child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.green,
+                          backgroundColor: Colors.greenAccent[400],
                           side: const BorderSide(
                             width: 1,
                             color: Colors.black,
