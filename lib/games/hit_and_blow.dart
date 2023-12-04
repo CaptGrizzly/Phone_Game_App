@@ -32,6 +32,7 @@ class _HitAndBlowScreenState extends State<HitAndBlowScreen> {
 
   int attempts = 1;
   int guessIndex = 0;
+  Color guessColor = Colors.grey;
 
   Widget guessingArea() {
     return Row(
@@ -41,7 +42,7 @@ class _HitAndBlowScreenState extends State<HitAndBlowScreen> {
           width: 60,
           height: 60,
           decoration: BoxDecoration(
-              color: Colors.grey,
+              color: guessColor,
               shape: BoxShape.circle,
               border: Border.all(
                 width: 1,
@@ -202,7 +203,11 @@ class _HitAndBlowScreenState extends State<HitAndBlowScreen> {
                   width: 40,
                   height: 40,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        guessColor = colors[0];
+                      });
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: colors[0],
                       side: const BorderSide(
@@ -222,7 +227,11 @@ class _HitAndBlowScreenState extends State<HitAndBlowScreen> {
                   width: 40,
                   height: 40,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        guessColor = colors[1];
+                      });
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: colors[1],
                       side: const BorderSide(
@@ -242,7 +251,11 @@ class _HitAndBlowScreenState extends State<HitAndBlowScreen> {
                   width: 40,
                   height: 40,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        guessColor = colors[2];
+                      });
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: colors[2],
                       side: const BorderSide(
@@ -262,7 +275,11 @@ class _HitAndBlowScreenState extends State<HitAndBlowScreen> {
                   width: 40,
                   height: 40,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        guessColor = colors[3];
+                      });
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: colors[3],
                       side: const BorderSide(
@@ -304,7 +321,11 @@ class _HitAndBlowScreenState extends State<HitAndBlowScreen> {
                   width: 40,
                   height: 40,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        guessColor = colors[4];
+                      });
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: colors[4],
                       side: const BorderSide(
@@ -324,7 +345,11 @@ class _HitAndBlowScreenState extends State<HitAndBlowScreen> {
                   width: 40,
                   height: 40,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        guessColor = colors[5];
+                      });
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: colors[5],
                       side: const BorderSide(
@@ -344,7 +369,11 @@ class _HitAndBlowScreenState extends State<HitAndBlowScreen> {
                   width: 40,
                   height: 40,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        guessColor = colors[6];
+                      });
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: colors[6],
                       side: const BorderSide(
@@ -364,7 +393,11 @@ class _HitAndBlowScreenState extends State<HitAndBlowScreen> {
                   width: 40,
                   height: 40,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        guessColor = colors[7];
+                      });
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: colors[7],
                       side: const BorderSide(
