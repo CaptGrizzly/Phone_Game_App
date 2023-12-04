@@ -30,7 +30,8 @@ class _HitAndBlowScreenState extends State<HitAndBlowScreen> {
     colors[rand.nextInt(colors.length)]
   ];
 
-  int guesses = 1;
+  int attempts = 1;
+  int guessIndex = 0;
 
   Widget guessingArea() {
     return Row(
