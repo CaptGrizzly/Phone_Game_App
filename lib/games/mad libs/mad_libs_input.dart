@@ -16,7 +16,7 @@ class MadLibsInputScreen extends StatefulWidget {
 }
 
 class _MadLibsInputScreenState extends State<MadLibsInputScreen> {
-  List<String> userInput = ["Kirby", "Sonic", "Mario"];
+  List<String> userInput = [];
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -62,7 +62,9 @@ class _MadLibsInputScreenState extends State<MadLibsInputScreen> {
                             return null;
                           },
                           onSaved: (value) {
-                            userInput.add(value!);
+                            setState(() {
+                              userInput.add(value!);
+                            });
                           },
                         ),
                       ),
@@ -99,7 +101,6 @@ class _MadLibsInputScreenState extends State<MadLibsInputScreen> {
                           MaterialPageRoute(builder: (context) => MadLibsResultsScreen(
                             story: widget.story,
                             input: userInput,
-                            //input: _userInput,
                           ))
                       );
                     },

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../../home.dart';
 import 'mad_libs_home.dart';
 
-class MadLibsResultsScreen extends StatelessWidget {
+class MadLibsResultsScreen extends StatefulWidget {
   const MadLibsResultsScreen({
     super.key,
     required this.story,
@@ -11,16 +11,19 @@ class MadLibsResultsScreen extends StatelessWidget {
 
   final String story;
   final List<String> input;
+  @override
+  State<MadLibsResultsScreen> createState() => _MadLibsResultsScreenState();
+}
 
-  // String fillStory(String story, List<String> input) {
-  //   for (String term in input) {
-  //     story.replaceFirst("word", term);
-  //   }
-  //   return story;
-  // }
+class _MadLibsResultsScreenState extends State<MadLibsResultsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    String filledStory = widget.story;
+    for (var term in widget.input) {
+      filledStory = filledStory.replaceFirst("word", term);
+    }
+
     return Scaffold(
         backgroundColor: Colors.red,
         body: Center(
@@ -40,7 +43,7 @@ class MadLibsResultsScreen extends StatelessWidget {
                 SizedBox(
                   width: 300,
                   child: Text(
-                    story,
+                    filledStory,
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 18,

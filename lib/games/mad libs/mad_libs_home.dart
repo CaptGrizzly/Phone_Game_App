@@ -1,7 +1,6 @@
-import 'package:csc322_game_app/games/mad%20libs/blanks.dart';
-
-import '/games/mad%20libs/mad_libs_input.dart';
-import '/games/mad%20libs/puzzles.dart';
+import 'blanks.dart';
+import 'mad_libs_input.dart';
+import 'puzzles.dart';
 import 'package:flutter/material.dart';
 
 class MadLibsHomeScreen extends StatelessWidget {
