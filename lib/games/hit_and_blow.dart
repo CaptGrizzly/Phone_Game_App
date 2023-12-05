@@ -33,62 +33,34 @@ class _HitAndBlowScreenState extends State<HitAndBlowScreen> {
   int attempts = 1;
   int guessIndex = 0;
   Color guessColor = Colors.grey;
+  var isSelected = false;
 
-  Widget guessingArea() {
+  Widget guessingContainer(int index) {
+    return Container(
+      width: 60,
+      height: 60,
+      decoration: BoxDecoration(
+          color: isSelected ? guessColor : Colors.grey,
+          shape: BoxShape.circle,
+          border: Border.all(
+            width: 1,
+            color: Colors.black,
+          )
+      ),
+    );
+  }
+
+  Widget guessingArea(int index) {
     return Row(
       children: [
         const SizedBox(width: 10),
-        Container(
-          width: 60,
-          height: 60,
-          decoration: BoxDecoration(
-              color: guessColor,
-              shape: BoxShape.circle,
-              border: Border.all(
-                width: 1,
-                color: Colors.black,
-              )
-          ),
-        ),
+        guessingContainer(1),
         const SizedBox(width: 10),
-        Container(
-          width: 60,
-          height: 60,
-          decoration: BoxDecoration(
-              color: Colors.grey,
-              shape: BoxShape.circle,
-              border: Border.all(
-                width: 1,
-                color: Colors.black,
-              )
-          ),
-        ),
+        guessingContainer(2),
         const SizedBox(width: 10),
-        Container(
-          width: 60,
-          height: 60,
-          decoration: BoxDecoration(
-              color: Colors.grey,
-              shape: BoxShape.circle,
-              border: Border.all(
-                width: 1,
-                color: Colors.black,
-              )
-          ),
-        ),
+        guessingContainer(3),
         const SizedBox(width: 10),
-        Container(
-          width: 60,
-          height: 60,
-          decoration: BoxDecoration(
-              color: Colors.grey,
-              shape: BoxShape.circle,
-              border: Border.all(
-                width: 1,
-                color: Colors.black,
-              )
-          ),
-        ),
+        guessingContainer(4),
         const SizedBox(width: 10),
         Column(
           children: [
@@ -171,21 +143,21 @@ class _HitAndBlowScreenState extends State<HitAndBlowScreen> {
                 ),
               ),
               const SizedBox(height: 30),
-              guessingArea(),
+              guessingArea(1),
               const SizedBox(height: 20),
-              guessingArea(),
+              guessingArea(2),
               const SizedBox(height: 20),
-              guessingArea(),
+              guessingArea(3),
               const SizedBox(height: 20),
-              guessingArea(),
+              guessingArea(4),
               const SizedBox(height: 20),
-              guessingArea(),
+              guessingArea(5),
               const SizedBox(height: 20),
-              guessingArea(),
+              guessingArea(6),
               const SizedBox(height: 20),
-              guessingArea(),
+              guessingArea(7),
               const SizedBox(height: 20),
-              guessingArea(),
+              guessingArea(8),
               const SizedBox(height: 20),
             ],
           ),
@@ -205,6 +177,7 @@ class _HitAndBlowScreenState extends State<HitAndBlowScreen> {
                   child: ElevatedButton(
                     onPressed: () {
                       setState(() {
+                        isSelected = true;
                         guessColor = colors[0];
                       });
                     },
@@ -229,6 +202,7 @@ class _HitAndBlowScreenState extends State<HitAndBlowScreen> {
                   child: ElevatedButton(
                     onPressed: () {
                       setState(() {
+                        isSelected = true;
                         guessColor = colors[1];
                       });
                     },
@@ -253,6 +227,7 @@ class _HitAndBlowScreenState extends State<HitAndBlowScreen> {
                   child: ElevatedButton(
                     onPressed: () {
                       setState(() {
+                        isSelected = true;
                         guessColor = colors[2];
                       });
                     },
@@ -277,6 +252,7 @@ class _HitAndBlowScreenState extends State<HitAndBlowScreen> {
                   child: ElevatedButton(
                     onPressed: () {
                       setState(() {
+                        isSelected = true;
                         guessColor = colors[3];
                       });
                     },
@@ -323,6 +299,7 @@ class _HitAndBlowScreenState extends State<HitAndBlowScreen> {
                   child: ElevatedButton(
                     onPressed: () {
                       setState(() {
+                        isSelected = true;
                         guessColor = colors[4];
                       });
                     },
@@ -347,6 +324,7 @@ class _HitAndBlowScreenState extends State<HitAndBlowScreen> {
                   child: ElevatedButton(
                     onPressed: () {
                       setState(() {
+                        isSelected = true;
                         guessColor = colors[5];
                       });
                     },
@@ -371,6 +349,7 @@ class _HitAndBlowScreenState extends State<HitAndBlowScreen> {
                   child: ElevatedButton(
                     onPressed: () {
                       setState(() {
+                        isSelected = true;
                         guessColor = colors[6];
                       });
                     },
@@ -395,6 +374,7 @@ class _HitAndBlowScreenState extends State<HitAndBlowScreen> {
                   child: ElevatedButton(
                     onPressed: () {
                       setState(() {
+                        isSelected = true;
                         guessColor = colors[7];
                       });
                     },
