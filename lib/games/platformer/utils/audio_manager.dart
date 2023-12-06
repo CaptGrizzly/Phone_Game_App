@@ -14,7 +14,7 @@ class AudioManager {
       'Collectibles_6.wav',
       'Hit_2.wav',
       'Jump_15.wav',
-      'Winning_Sight.wav',
+      'Win_2.wav',
     ]);
   }
 

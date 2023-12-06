@@ -4,7 +4,7 @@ import 'games/mad libs/mad_libs_home.dart';
 import 'main.dart';
 import 'package:csc322_game_app/games/maze/maze_screen.dart';
 import 'scores.dart';
-import 'games/platformer/overlays/main_menu.dart';
+import 'games/platformer/game_play_screen.dart';
 
 class GameHomeScreen extends StatelessWidget {
   const GameHomeScreen({super.key});
@@ -140,8 +140,8 @@ class GameHomeScreen extends StatelessWidget {
                       ),
                       onPressed: () {
                         Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => const GameHomeScreen())
+                          context,
+                          MaterialPageRoute(builder: (context) => const GamePlayScreen()),
                         );
                       },
                       child: const Text(

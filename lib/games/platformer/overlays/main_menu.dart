@@ -1,4 +1,4 @@
-import 'package:csc322_game_app/games/platformer//overlays/settings.dart';
+import 'package:csc322_game_app/games/platformer/overlays/settings.dart';
 import 'package:flutter/material.dart';
 
 import '../game.dart';
