@@ -1,0 +1,28 @@
+import 'package:flame/game.dart';
+import 'package:flame/flame.dart';
+import 'package:flame/extensions.dart';
+import 'package:flame/input.dart';
+import 'package:csc322_game_app/games/platformer//utils/audio_manager.dart';
+
+import 'model/player_data.dart';
+
+// Represents the game world
+class SimplePlatformer extends FlameGame
+    with HasCollisionDetection, HasKeyboardHandlerComponents {
+  // Reference to common spritesheet
+  late Image spriteSheet;
+
+  final playerData = PlayerData();
+  final fixedResolution = Vector2(640, 330);
+
+  @override
+  Future<void> onLoad() async {
+    // Device setup
+    await Flame.device.fullScreen();
+    await Flame.device.setLandscape();
+
+    // Loads all the audio assets
+    await AudioManager.init();
+    spriteSheet = await images.load('Spritesheet.png');
+  }
+}

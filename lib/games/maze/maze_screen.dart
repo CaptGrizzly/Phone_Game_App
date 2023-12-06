@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import '../home.dart';
+import 'package:csc322_game_app/home.dart';
 
-class PlatformerScreen extends StatelessWidget {
-  const PlatformerScreen({super.key});
+class MazeScreen extends StatelessWidget {
+  const MazeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlue,
+      backgroundColor: Colors.grey,
       body: Center(
         child: ElevatedButton(
           onPressed: () {

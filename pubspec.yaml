@@ -37,18 +37,21 @@ dependencies:
   cupertino_icons: ^1.0.2
   firebase_core: ^2.22.0
   cloud_firestore: ^4.13.1
-  maze_builder: ^1.0.1
+  flame_tiled: ^1.15.0
+  tiled: ^0.10.1
+  flame_audio: ^2.1.4
+  flame: ^1.11.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_lints: ^2.0.3
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -60,6 +63,10 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/tiles/
+    - assets/audio/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

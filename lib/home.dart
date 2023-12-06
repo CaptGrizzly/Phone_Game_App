@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'games/hit and blow/hit_and_blow.dart';
 import 'games/mad libs/mad_libs_home.dart';
 import 'main.dart';
-import 'games/maze.dart';
+import 'package:csc322_game_app/games/maze/maze_screen.dart';
 import 'scores.dart';
-import 'games/platformer.dart';
+import 'games/platformer/overlays/main_menu.dart';
 
 class GameHomeScreen extends StatelessWidget {
   const GameHomeScreen({super.key});
@@ -141,7 +141,7 @@ class GameHomeScreen extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => const PlatformerScreen())
+                            MaterialPageRoute(builder: (context) => const GameHomeScreen())
                         );
                       },
                       child: const Text(
