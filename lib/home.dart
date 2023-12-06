@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'games/hit_and_blow.dart';
+import 'games/hit and blow/hit_and_blow.dart';
 import 'games/mad libs/mad_libs_home.dart';
 import 'main.dart';
 import 'games/maze.dart';

@@ -1,6 +1,24 @@
 import 'dart:math';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import '../home.dart';
+
+const List<Color> colors = [
+  Colors.red,
+  Colors.orange,
+  Colors.yellow,
+  Colors.green,
+  Colors.blue,
+  Colors.purple,
+  Colors.black,
+  Colors.white,
+];
+
+List<Color> solution = [
+  colors[Random().nextInt(colors.length)],
+  colors[Random().nextInt(colors.length)],
+  colors[Random().nextInt(colors.length)],
+  colors[Random().nextInt(colors.length)],
+];
 
 class HitAndBlowScreen extends StatefulWidget {
   const HitAndBlowScreen({super.key});
@@ -10,32 +28,24 @@ class HitAndBlowScreen extends StatefulWidget {
 }
 
 class _HitAndBlowScreenState extends State<HitAndBlowScreen> {
-  static List<Color> colors = [
-    Colors.red,
-    Colors.orange,
-    Colors.yellow,
-    Colors.green,
-    Colors.blue,
-    Colors.purple,
-    Colors.black,
-    Colors.white,
-  ];
+  List<List<Color>> previousGuesses = [];
+  bool gameOver = false;
 
-  static Random rand = Random();
+  bool checkCode(List<Color> guess) {
+    if (listEquals(guess, solution)) {
+      return true;
+    }
+    return false;
+  }
 
-  List<Color> solution = [
-    colors[rand.nextInt(colors.length)],
-    colors[rand.nextInt(colors.length)],
-    colors[rand.nextInt(colors.length)],
-    colors[rand.nextInt(colors.length)]
-  ];
-
-  int attempts = 1;
-  int guessIndex = 0;
+  int rowIndex = 1;
+  int guessIndex = 1;
   Color guessColor = Colors.grey;
   var isSelected = false;
 
   Widget guessingContainer(int index) {
+    int spotIndex = index;
+
     return Container(
       width: 60,
       height: 60,
@@ -51,6 +61,8 @@ class _HitAndBlowScreenState extends State<HitAndBlowScreen> {
   }
 
   Widget guessingArea(int index) {
+    int rowIndex = index;
+
     return Row(
       children: [
         const SizedBox(width: 10),
