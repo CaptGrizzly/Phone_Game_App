@@ -19,14 +19,14 @@ class GameHomeScreen extends StatelessWidget {
             const SizedBox(height: 40),
             // Display welcome message with player's name
             Text(
-              'Welcome, $playerName',
+              'Welcome, $playerName!',
               style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
             ),
-            const SizedBox(height: 40),
+            const SizedBox(height: 10),
             const Text(
               'Flutter Games',
               style: TextStyle(
@@ -36,109 +36,99 @@ class GameHomeScreen extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
-              const SizedBox(height: 10),
-              const Text(
+            const SizedBox(height: 10),
+            const Text(
                 'Choose a Game',
                 style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
                 ),
+            ),
+            const SizedBox(height: 15),
+            SizedBox(
+              width: 120,
+              height: 60,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.red,
+                  side: const BorderSide(
+                    width: 1,
+                    color: Colors.black,
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const MadLibsHomeScreen())
+                  );
+                },
+                child: const Text(
+                  'Mad Libs',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
               ),
-              const SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(
-                    width: 120,
-                    height: 80,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.red,
-                        side: const BorderSide(
-                          width: 1,
-                          color: Colors.black,
-                        ),
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const MadLibsHomeScreen())
-                        );
-                      },
-                      child: const Text(
-                        'Mad Libs',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
+            ),
+            const SizedBox(height: 10),
+            SizedBox(
+              width: 120,
+              height: 60,
+              child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.greenAccent[400],
+                    side: const BorderSide(
+                      width: 1,
+                      color: Colors.black,
                     ),
                   ),
-                ],
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const HitAndBlowScreen())
+                    );
+                  },
+                  child: const Text(
+                    'Hit & Blow',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                    textAlign: TextAlign.center,
+                  )
               ),
+            ),
+            const SizedBox(height: 10),
+            SizedBox(
+              width: 120,
+              height: 60,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.yellow,
+                  side: const BorderSide(
+                    width: 1,
+                    color: Colors.black,
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const GamePlayScreen()),
+                  );
+                },
+                child: const Text(
+                  '2D Platformer',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
               const SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(
-                    width: 120,
-                    height: 80,
-                    child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.greenAccent[400],
-                          side: const BorderSide(
-                            width: 1,
-                            color: Colors.black,
-                          ),
-                        ),
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => const HitAndBlowScreen())
-                          );
-                        },
-                        child: const Text(
-                          'Hit & Blow',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
-                          ),
-                          textAlign: TextAlign.center,
-                        )
-                    ),
-                  ),
-                  const SizedBox(width: 20),
-                  SizedBox(
-                    width: 120,
-                    height: 80,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.lightBlue,
-                        side: const BorderSide(
-                          width: 1,
-                          color: Colors.black,
-                        ),
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const GamePlayScreen()),
-                        );
-                      },
-                      child: const Text(
-                        '2D Platformer',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 15),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.grey,
