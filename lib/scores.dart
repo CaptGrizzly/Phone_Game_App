@@ -11,6 +11,7 @@ class ScoresScreen extends StatelessWidget {
         FirebaseFirestore.instance.collection('hit_and_blow_scores').snapshots();
 
     return Scaffold(
+      backgroundColor: Colors.grey[350],
       appBar: AppBar(
         title: const Text('Scores'),
       ),
@@ -24,7 +25,7 @@ class ScoresScreen extends StatelessWidget {
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
             ),
             Container(
-              height: 250,
+              height: 200,
               padding: const EdgeInsets.symmetric(vertical: 20),
               child: StreamBuilder<QuerySnapshot>(
                 stream: platformerScoresCollection,
@@ -54,13 +55,13 @@ class ScoresScreen extends StatelessWidget {
                 },
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 10),
             const Text(
               'Hit and Blow Scores',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
             ),
             Container(
-              height: 250,
+              height: 200,
               padding: const EdgeInsets.symmetric(vertical: 20),
               child: StreamBuilder<QuerySnapshot>(
                 stream: hitAndBlowScoresCollection,

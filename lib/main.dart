@@ -26,6 +26,7 @@ class PlayerNameScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[350],
       appBar: AppBar(
         title: const Text('Enter Player Name'),
       ),
