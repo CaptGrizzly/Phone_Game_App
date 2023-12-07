@@ -150,7 +150,7 @@ class GameHomeScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const ScoresScreen())
+                      MaterialPageRoute(builder: (context) => ScoresScreen())
                   );
                 },
                 child: const Text(
