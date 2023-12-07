@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import '../../home.dart';
 
@@ -46,12 +47,33 @@ class _HitAndBlowScreenState extends State<HitAndBlowScreen> {
     });
   }
 
-void endGame() {
-  setState(() {
-    gameOver = true;
-    stopwatch.stop(); // Stop the stopwatch when the game is over
-  });
-}
+ void endGame() {
+    setState(() {
+      gameOver = true;
+      stopwatch.stop(); // Stop the stopwatch when the game is over
+      // Store the game data in Firebase when the game is over
+      storeGameData();
+    });
+  }
+
+  void storeGameData() {
+    int guessesTaken = previousGuesses.length;
+    String timeTaken = calculateTime();
+    DateTime now = DateTime.now();
+
+    // Replace "PlayerName" with the actual player's name (retrieve it from user input or elsewhere)
+    String playerName = "PlayerName";
+
+    // Add data to hit_and_blow_scores collection in Firebase
+    CollectionReference hitAndBlowScoresCollection =
+        FirebaseFirestore.instance.collection('hit_and_blow_scores');
+    hitAndBlowScoresCollection.add({
+      'playerName': playerName,
+      'date': now,
+      'guessesTaken': guessesTaken,
+      'timeTaken': timeTaken,
+    });
+  }
 
   void addGuess(List<Color> guess) {
     setState(() {
@@ -146,6 +168,7 @@ void endGame() {
                       int guessesTaken = previousGuesses.length; // Replace with your logic to get the number of guesses
                       String timeTaken = calculateTime(); // Get the formatted time
                       DateTime now = DateTime.now();
+                      storeGameData();
                       endGame(); // Stop the stopwatch
                       //MyCustomFormState().storePlayerData("PlayerName", now, guessesTaken, timeTaken);
                     },
