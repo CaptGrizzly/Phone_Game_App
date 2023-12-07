@@ -36,7 +36,7 @@ class GamePlayScreen extends StatelessWidget {
                 ),
               );
             },
-            child: Text('Start Platformer Game'),
+            child: const Text('Start Platformer Game'),
           ),
         ),
       ),

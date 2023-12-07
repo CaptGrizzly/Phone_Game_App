@@ -34,19 +34,37 @@ bool gameOver = false;
 
 class _HitAndBlowScreenState extends State<HitAndBlowScreen> {
   List<List<Color>> previousGuesses = [];
+  Stopwatch stopwatch = Stopwatch();
 
   void resetState() {
     setState(() {
       previousGuesses = [];
       gameOver = false;
       solution = generateRandom();
+      stopwatch.reset(); // Reset the stopwatch
+      stopwatch.start(); // Start the stopwatch
     });
   }
+
+void endGame() {
+  setState(() {
+    gameOver = true;
+    stopwatch.stop(); // Stop the stopwatch when the game is over
+  });
+}
 
   void addGuess(List<Color> guess) {
     setState(() {
       previousGuesses.add(guess);
     });
+  }
+
+  String calculateTime() {
+    Duration elapsed = stopwatch.elapsed;
+    int minutes = elapsed.inMinutes;
+    int seconds = elapsed.inSeconds % 60;
+    String formattedTime = '$minutes:${seconds.toString().padLeft(2, '0')}';
+    return formattedTime;
   }
 
   @override
@@ -119,17 +137,22 @@ class _HitAndBlowScreenState extends State<HitAndBlowScreen> {
                   ),
                 ),
                 const SizedBox(width: 10),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const GameHomeScreen())
-                    );
-                  },
-                  child: const Text(
-                    "Home"
+                        MaterialPageRoute(builder: (context) => const GameHomeScreen()),
+                      );
+                      int guessesTaken = previousGuesses.length; // Replace with your logic to get the number of guesses
+                      String timeTaken = calculateTime(); // Get the formatted time
+                      DateTime now = DateTime.now();
+                      endGame(); // Stop the stopwatch
+                      //MyCustomFormState().storePlayerData("PlayerName", now, guessesTaken, timeTaken);
+                    },
+                    child: const Text(
+                      "Home",
+                    ),
                   ),
-                ),
               ],
             ),
             const SizedBox(height: 10),
