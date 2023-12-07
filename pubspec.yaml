@@ -37,10 +37,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   firebase_core: ^2.22.0
   cloud_firestore: ^4.13.1
-  flame_tiled: ^1.15.0
   tiled: ^0.10.1
-  flame_audio: ^2.1.4
-  flame: ^1.11.0
+  flame: ^1.8.2
+  flame_tiled: ^1.11.0
+  flame_audio: ^2.0.5
 
 dev_dependencies:
   flutter_test:
@@ -64,9 +64,22 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-    - assets/images/
-    - assets/tiles/
     - assets/audio/
+    - assets/tiles/
+    - assets/images/Background/
+    - assets/images/Terrain/
+    - assets/images/HUD/
+    - assets/images/Traps/Saw/
+    - assets/images/Items/Checkpoints/Checkpoint/
+    - assets/images/Items/Fruits/
+    - assets/images/Main Characters/
+    - assets/images/Main Characters/Mask Dude/
+    - assets/images/Main Characters/Ninja Frog/
+    - assets/images/Main Characters/Pink Man/
+    - assets/images/Main Characters/Virtual Guy/
+    - assets/images/Enemies/Chicken/
+  #   - images/a_dot_burr.jpeg
+  #   - images/a_dot_ham.jpeg
 
   # To add assets to your application, add an assets section, like this:
   # assets:
