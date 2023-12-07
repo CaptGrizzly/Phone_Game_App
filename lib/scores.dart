@@ -7,16 +7,25 @@ class ScoresScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey,
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const GameHomeScreen())
-            );
-          },
-          child: const Text('Home'),
+      appBar: AppBar(
+        title: const Text('High Scores'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const GameHomeScreen()),
+                );
+              },
+              child: const Text('Back to Home'),
+            ),
+            // Add your high scores content here
+          ],
         ),
       ),
     );
