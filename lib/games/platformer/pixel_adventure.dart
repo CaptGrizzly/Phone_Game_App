@@ -3,10 +3,12 @@ import 'dart:async';
 import 'package:csc322_game_app/games/platformer/components/jump_button.dart';
 import 'package:csc322_game_app/games/platformer/components/level.dart';
 import 'package:csc322_game_app/games/platformer/components/player.dart';
+
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/game.dart';
 import 'package:flame/input.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
 class PixelAdventure extends FlameGame
@@ -15,13 +17,14 @@ class PixelAdventure extends FlameGame
         DragCallbacks,
         HasCollisionDetection,
         TapCallbacks {
+  
+  
   @override
   Color backgroundColor() => const Color(0xFF211F30);
-
   late CameraComponent cam;
   Player player = Player(character: 'Mask Dude');
   late JoystickComponent joystick;
-  bool showControls = true;
+  bool showControls =true;
   bool playSounds = true;
   double soundVolume = 1.0;
   List<String> levelNames = ['Level-01', 'Level-01'];
@@ -29,12 +32,12 @@ class PixelAdventure extends FlameGame
 
   @override
   FutureOr<void> onLoad() async {
+    // Load all images into cache
     await images.loadAllImages();
 
     _loadLevel();
 
     if (showControls) {
-      // Add joystick and jump button first
       addJoystick();
       add(JumpButton());
     }
@@ -47,6 +50,7 @@ class PixelAdventure extends FlameGame
     if (showControls) {
       updateJoystick();
     }
+
     super.update(dt);
   }
 
@@ -54,15 +58,18 @@ class PixelAdventure extends FlameGame
     joystick = JoystickComponent(
       priority: 10,
       knob: SpriteComponent(
-        sprite: Sprite(images.fromCache('HUD/Knob.png')),
+        sprite: Sprite(
+          images.fromCache('HUD/Knob.png'),
+        ),
       ),
       background: SpriteComponent(
-        sprite: Sprite(images.fromCache('HUD/Joystick.png')),
+        sprite: Sprite(
+          images.fromCache('HUD/Joystick.png'),
+        ),
       ),
       margin: const EdgeInsets.only(left: 32, bottom: 32),
     );
 
-    // Add joystick with higher priority
     add(joystick);
   }
 
@@ -91,6 +98,7 @@ class PixelAdventure extends FlameGame
       currentLevelIndex++;
       _loadLevel();
     } else {
+      // no more levels
       currentLevelIndex = 0;
       _loadLevel();
     }
@@ -110,7 +118,6 @@ class PixelAdventure extends FlameGame
       );
       cam.viewfinder.anchor = Anchor.topLeft;
 
-      // Add game components after adding joystick and jump button
       addAll([cam, world]);
     });
   }
