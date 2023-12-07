@@ -56,24 +56,24 @@ class _HitAndBlowScreenState extends State<HitAndBlowScreen> {
     });
   }
 
-  void storeGameData() {
-    int guessesTaken = previousGuesses.length;
-    String timeTaken = calculateTime();
-    DateTime now = DateTime.now();
+void storeGameData() {
+  int guessesTaken = previousGuesses.length;
+  String timeTaken = calculateTime();
+  DateTime now = DateTime.now();
 
-    // Replace "PlayerName" with the actual player's name (retrieve it from user input or elsewhere)
-    String playerName = "PlayerName";
+  // Replace "PlayerName" with the actual player's name (retrieve it from user input or elsewhere)
+  String playerName = "PlayerName";
 
-    // Add data to hit_and_blow_scores collection in Firebase
-    CollectionReference hitAndBlowScoresCollection =
-        FirebaseFirestore.instance.collection('hit_and_blow_scores');
-    hitAndBlowScoresCollection.add({
-      'playerName': playerName,
-      'date': now,
-      'guessesTaken': guessesTaken,
-      'timeTaken': timeTaken,
-    });
-  }
+  // Add data to 2d_platformer_scores collection in Firebase
+  CollectionReference platformerScoresCollection =
+      FirebaseFirestore.instance.collection('2d_platformer_scores');
+  platformerScoresCollection.add({
+    'playerName': playerName,
+    'date': now,
+    'guessesTaken': guessesTaken,
+    'timeTaken': timeTaken,
+  });
+}
 
   void addGuess(List<Color> guess) {
     setState(() {
