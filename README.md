@@ -1,16 +1,21 @@
-# csc322_game_app
+# 🎮 Flutter Games Collection
 
-A new Flutter project.
+A simple **Flutter-based game hub** featuring multiple mini-games, including **Mad Libs, Hit & Blow, and a 2D Platformer**. Players can enjoy these games while tracking their high scores.
 
-## Getting Started
+## 📌 Features
+- 🎲 **Mad Libs** – Create fun stories by filling in random words.
+- 🎯 **Hit & Blow** – A classic logic deduction game.
+- 🕹 **2D Platformer** – Jump, run, and dodge obstacles in a side-scrolling adventure.
+- 🏆 **High Scores** – Track your best performances across all games.
 
-This project is a starting point for a Flutter application.
+## 🚀 Getting Started
 
-A few resources to get you started if this is your first Flutter project:
+### **Prerequisites**
+- Install **Flutter** ([Get Flutter](https://flutter.dev/docs/get-started/install))
+- Ensure **Dart** is installed
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### **Installation**
+1. **Clone the repository**:
+   ```sh
+   git clone <repository-url>
+   cd <repository-directory>
